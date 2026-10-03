@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}New Student{% endblock %}
+
+{% block content %}
+  <h1>New Student</h1>
+  <form method="post">
+    <p>First name<br><input type="text" name="firstname" required></p>
+    <p>Last name<br><input type="text" name="lastname" required></p>
+    <p>Email<br><input type="email" name="email" required></p>
+    <p>Age<br><input type="number" name="age" required></p>
+    <p>Bio<br><textarea name="bio" rows="4" cols="40"></textarea></p>
+    <button type="submit">Submit</button>
+  </form>
+{% endblock %}

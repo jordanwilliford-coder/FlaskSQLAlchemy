@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ student.firstname }} {{ student.lastname }}{% endblock %}
+
+{% block content %}
+  <h1>{{ student.firstname }} {{ student.lastname }}</h1>
+  <p><a href="{{ url_for('edit', student_id=student.id) }}">Edit</a></p>
+  <form method="post" action="{{ url_for('delete', student_id=student.id) }}">
+    <button type="submit" onclick="return confirm('Delete this student?')">Delete</button>
+  </form>
+  <p>Email: {{ student.email }}</p>
+  <p>Age: {{ student.age }}</p>
+  <p>Member since: {{ student.created_at }}</p>
+  <h3>Bio</h3>
+  <p>{{ student.bio }}</p>
+{% endblock %}

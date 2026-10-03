@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Edit {{ student.firstname }}{% endblock %}
+
+{% block content %}
+  <h1>Edit {{ student.firstname }} {{ student.lastname }}</h1>
+  <form method="post">
+    <p>First name<br>
+      <input type="text" name="firstname" value="{{ student.firstname }}" required></p>
+    <p>Last name<br>
+      <input type="text" name="lastname" value="{{ student.lastname }}" required></p>
+    <p>Email<br>
+      <input type="email" name="email" value="{{ student.email }}" required></p>
+    <p>Age<br>
+      <input type="number" name="age" value="{{ student.age }}" required></p>
+    <p>Bio<br>
+      <textarea name="bio" rows="4" cols="40">{{ student.bio }}</textarea></p>
+    <button type="submit">Save changes</button>
+  </form>
+{% endblock %}
